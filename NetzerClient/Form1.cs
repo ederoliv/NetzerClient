@@ -7,6 +7,14 @@ namespace NetzerClient
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            lblComputerNameField.Text = Environment.MachineName;
+            lblUserNameField.Text = Environment.UserName;
+
+        }
+
         private void lblTitle_Click(object sender, EventArgs e)
         {
 

@@ -34,18 +34,21 @@
             lblComputerNameField = new Label();
             lblUserNameField = new Label();
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            label4 = new Label();
+            label5 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // lblComputerName
             // 
             lblComputerName.AutoSize = true;
+            lblComputerName.BackColor = Color.FromArgb(224, 224, 224);
             lblComputerName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblComputerName.ForeColor = Color.FromArgb(224, 224, 224);
-            lblComputerName.Location = new Point(12, 43);
+            lblComputerName.ForeColor = Color.FromArgb(64, 64, 64);
+            lblComputerName.Location = new Point(28, 44);
             lblComputerName.Name = "lblComputerName";
             lblComputerName.Size = new Size(181, 21);
             lblComputerName.TabIndex = 0;
@@ -54,9 +57,10 @@
             // lblUserName
             // 
             lblUserName.AutoSize = true;
+            lblUserName.BackColor = Color.FromArgb(224, 224, 224);
             lblUserName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUserName.ForeColor = Color.FromArgb(224, 224, 224);
-            lblUserName.Location = new Point(12, 74);
+            lblUserName.ForeColor = Color.FromArgb(64, 64, 64);
+            lblUserName.Location = new Point(28, 75);
             lblUserName.Name = "lblUserName";
             lblUserName.Size = new Size(142, 21);
             lblUserName.TabIndex = 1;
@@ -80,7 +84,7 @@
             lblComputerNameField.AutoSize = true;
             lblComputerNameField.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblComputerNameField.ForeColor = Color.FromArgb(224, 224, 224);
-            lblComputerNameField.Location = new Point(192, 43);
+            lblComputerNameField.Location = new Point(208, 44);
             lblComputerNameField.Name = "lblComputerNameField";
             lblComputerNameField.Size = new Size(171, 21);
             lblComputerNameField.TabIndex = 3;
@@ -92,7 +96,7 @@
             lblUserNameField.AutoSize = true;
             lblUserNameField.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUserNameField.ForeColor = Color.FromArgb(224, 224, 224);
-            lblUserNameField.Location = new Point(153, 74);
+            lblUserNameField.Location = new Point(169, 75);
             lblUserNameField.Name = "lblUserNameField";
             lblUserNameField.Size = new Size(133, 21);
             lblUserNameField.TabIndex = 4;
@@ -100,6 +104,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
@@ -112,32 +118,60 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Hardware information";
             // 
-            // label1
+            // label3
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(23, 54);
-            label1.Name = "label1";
-            label1.Size = new Size(81, 21);
-            label1.TabIndex = 0;
-            label1.Text = "Processor:";
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(224, 224, 224);
+            label3.ForeColor = Color.FromArgb(64, 64, 64);
+            label3.Location = new Point(16, 76);
+            label3.Name = "label3";
+            label3.Size = new Size(66, 21);
+            label3.TabIndex = 2;
+            label3.Text = "Storage:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(23, 76);
+            label2.BackColor = Color.FromArgb(224, 224, 224);
+            label2.ForeColor = Color.FromArgb(64, 64, 64);
+            label2.Location = new Point(16, 97);
             label2.Name = "label2";
             label2.Size = new Size(47, 21);
             label2.TabIndex = 1;
             label2.Text = "RAM:";
             // 
-            // label3
+            // label1
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(23, 97);
-            label3.Name = "label3";
-            label3.Size = new Size(66, 21);
-            label3.TabIndex = 2;
-            label3.Text = "Storage:";
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(224, 224, 224);
+            label1.ForeColor = Color.FromArgb(64, 64, 64);
+            label1.Location = new Point(16, 55);
+            label1.Name = "label1";
+            label1.Size = new Size(81, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Processor:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(224, 224, 224);
+            label4.ForeColor = Color.FromArgb(64, 64, 64);
+            label4.Location = new Point(16, 34);
+            label4.Name = "label4";
+            label4.Size = new Size(150, 21);
+            label4.TabIndex = 3;
+            label4.Text = "Operational System:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.FromArgb(224, 224, 224);
+            label5.ForeColor = Color.FromArgb(64, 64, 64);
+            label5.Location = new Point(16, 118);
+            label5.Name = "label5";
+            label5.Size = new Size(26, 21);
+            label5.TabIndex = 4;
+            label5.Text = "IP:";
             // 
             // Form1
             // 
@@ -154,6 +188,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Netzer Client";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -171,5 +206,7 @@
         private Label label2;
         private Label label1;
         private Label label3;
+        private Label label4;
+        private Label label5;
     }
 }
