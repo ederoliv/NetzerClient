@@ -41,7 +41,7 @@ namespace NetzerClient
 
             string requestJson = JsonSerializer.Serialize(requestObject);
 
-            MessageBox.Show(requestJson);
+            //MessageBox.Show(requestJson);
         }
 
 
@@ -147,6 +147,26 @@ namespace NetzerClient
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
         {
 
         }
