@@ -178,7 +178,7 @@
             panel1.Controls.Add(lblTitle);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(341, 40);
+            panel1.Size = new Size(381, 40);
             panel1.TabIndex = 11;
             // 
             // lblProcessor
@@ -406,7 +406,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(16, 16, 20);
-            ClientSize = new Size(341, 570);
+            ClientSize = new Size(381, 570);
             Controls.Add(pictureBox9);
             Controls.Add(pictureBox8);
             Controls.Add(pictureBox7);
