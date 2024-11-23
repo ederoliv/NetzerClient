@@ -4,6 +4,8 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Text.Json.Nodes;
 using System.Text.Json;
+using System.Windows.Forms;
+
 
 namespace NetzerClient
 {
@@ -16,6 +18,31 @@ namespace NetzerClient
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            NotifyIcon trayIcon;
+
+            trayIcon = new NotifyIcon();
+            trayIcon.Icon = new System.Drawing.Icon("icone.ico"); // Use um ícone personalizado
+            trayIcon.Text = "Seu App está rodando";
+            trayIcon.Visible = true;
+
+            // Criando o menu de contexto
+            ContextMenuStrip contextMenu = new ContextMenuStrip();
+            contextMenu.Items.Add("Abrir", null, (sender, e) =>
+            {
+                this.Show();
+                this.ShowInTaskbar = true;
+
+            }); // Exibe a janela principal
+            contextMenu.Items.Add("Sair", null, (sender, e) => Application.Exit()); // Fecha o programa
+
+            // Associando o menu de contexto ao NotifyIcon
+            trayIcon.ContextMenuStrip = contextMenu;
+
+            this.ShowInTaskbar = false; // Não mostrar na barra de tarefas
+            this.WindowState = FormWindowState.Minimized; // Iniciar minimizado
+            this.Hide(); // Esconde a janela principal
+
+
 
             lblComputerNameField.Text = GetMachineName();
 
@@ -118,7 +145,11 @@ namespace NetzerClient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            this.ShowInTaskbar = false; // Não mostrar na barra de tarefas
+            this.WindowState = FormWindowState.Minimized; // Iniciar minimizado
+            this.Hide(); // Esconde a janela principal
+
         }
 
 

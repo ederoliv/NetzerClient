@@ -78,9 +78,9 @@
             lblComputerName.ForeColor = Color.FromArgb(23, 166, 127);
             lblComputerName.Location = new Point(64, 52);
             lblComputerName.Name = "lblComputerName";
-            lblComputerName.Size = new Size(181, 21);
+            lblComputerName.Size = new Size(176, 21);
             lblComputerName.TabIndex = 0;
-            lblComputerName.Text = "Nome do Computador:";
+            lblComputerName.Text = "Nome do Computador";
             // 
             // lblUserName
             // 
@@ -89,9 +89,9 @@
             lblUserName.ForeColor = Color.FromArgb(23, 166, 127);
             lblUserName.Location = new Point(64, 103);
             lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(142, 21);
+            lblUserName.Size = new Size(138, 21);
             lblUserName.TabIndex = 1;
-            lblUserName.Text = "Nome do Usuário:";
+            lblUserName.Text = "Nome do Usuário";
             // 
             // lblTitle
             // 
@@ -300,12 +300,12 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(16, 16, 20);
-            button1.Location = new Point(131, 525);
+            button1.Location = new Point(146, 521);
             button1.Name = "button1";
             button1.RightToLeft = RightToLeft.No;
             button1.Size = new Size(86, 33);
             button1.TabIndex = 12;
-            button1.Text = "Sair";
+            button1.Text = "Fechar";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
