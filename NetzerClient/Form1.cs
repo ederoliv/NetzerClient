@@ -1,10 +1,10 @@
 using System.Management;
 using System.Net.Sockets;
 using System.Net;
+using System.Net.Http;
 using System.Net.NetworkInformation;
-using System.Text.Json.Nodes;
 using System.Text.Json;
-using System.Windows.Forms;
+using System.Text;
 
 
 namespace NetzerClient
@@ -56,22 +56,41 @@ namespace NetzerClient
 
             lblMacAddressField.Text = GetMacAddress();
 
+
+            Task.Run(() => SendRequestAsync());
+
+        }
+
+        private async Task SendRequestAsync()
+        {
+            string request = GenerateRequestObject();
+
+            using (HttpClient client = new HttpClient())
+            {
+
+                var content = new StringContent(request, Encoding.UTF8, "application/json");
+                await client.PostAsync("http://localhost:8080/api/v1/devices", content);
+            }
+        }
+
+        private string GenerateRequestObject()
+        {
+
             var requestObject = new
             {
-                machineName = lblComputerNameField.Text,
-                userName = lblUserNameField.Text,
-                operatingSystem = lblOperatingSystemField.Text,
-                processor = lblProcessorField.Text,
-                ipAddress = lblIpAddressField.Text,
-                macAddress = lblMacAddressField.Text
+                id = Guid.NewGuid(),
+                name = GetMachineName(),
+                username = GetUserName(),
+                operatingSystem = GetOperatingSystem(),
+                ip = GetLocalIPAddress(),
+                mac = GetMacAddress()
             };
 
             string requestJson = JsonSerializer.Serialize(requestObject);
 
-            //MessageBox.Show(requestJson);
+            return requestJson;
+
         }
-
-
 
         private static String GetProcessor()
         {
