@@ -1,7 +1,6 @@
 using System.Management;
 using System.Net.Sockets;
 using System.Net;
-using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Text.Json;
 using System.Text;
@@ -41,7 +40,6 @@ namespace NetzerClient
             this.ShowInTaskbar = false; // Não mostrar na barra de tarefas
             this.WindowState = FormWindowState.Minimized; // Iniciar minimizado
             this.Hide(); // Esconde a janela principal
-
 
 
             lblComputerNameField.Text = GetMachineName();
@@ -86,11 +84,11 @@ namespace NetzerClient
                 mac = GetMacAddress()
             };
 
-            string requestJson = JsonSerializer.Serialize(requestObject);
-
-            return requestJson;
+            return JsonSerializer.Serialize(requestObject);
 
         }
+
+        //METODOS QUE RECOLHEM AS INFORMAÇÕES SOBRE O DISPOSITIVO
 
         private static String GetProcessor()
         {
@@ -110,7 +108,6 @@ namespace NetzerClient
             }
 
             return "Erro ao obter processador";
-
         }
 
         private static String? GetOperatingSystem()
@@ -120,7 +117,6 @@ namespace NetzerClient
                         select x.GetPropertyValue("Caption")).FirstOrDefault();
             return name != null ? name.ToString() : "Unknown";
 
-            //return Environment.OSVersion.ToString();
         }
 
         private static String GetMachineName()
@@ -161,6 +157,7 @@ namespace NetzerClient
 
             return macAddresses;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
